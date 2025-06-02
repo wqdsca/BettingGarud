@@ -1,0 +1,26 @@
+sudo systemctl stop mysql
+sudo systemctl stop redis
+
+로컬 쿼리 redis 서버 닫기 
+
+도커 서버 시작
+docker compose up --build
+
+도커 서버 닫기
+docker compose down
+
+
+도커로 시작하면 mysql , redis 서버 종료 후  시작
+
+node 시작시
+.env 환경변수 redis, mysql을 127.0.0.1 / localhost 로 변경 후 시작
+sudo systemctl start mysql
+sudo systemctl start redis
+cd src 
+node app.js
+
+
+mysql appuser 권한
+GRANT ALL PRIVILEGES ON *.* TO 'appuser'@'localhost' IDENTIFIED BY 'killgtg1@@';
+FLUSH PRIVILEGES;
+

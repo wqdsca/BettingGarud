@@ -1,0 +1,81 @@
+
+#명령어 
+Key 관리
+
+DEL key : 키 삭제
+
+EXPIRE key seconds : TTL 설정
+
+TTL key : 남은 TTL 조회
+
+KEYS pattern (운영에선 SCAN 권장)
+
+String
+
+SET key value [EX seconds] : 문자열 저장 (+TTL)
+
+GET key : 문자열 조회
+
+INCR key / DECR key : 정수형 카운터 증가·감소
+
+List
+
+LPUSH key value : 왼쪽 삽입
+
+RPUSH key value : 오른쪽 삽입
+
+LPOP key / RPOP key : 양쪽에서 제거
+
+LRANGE key start end : 리스트 슬라이스
+
+Set
+
+SADD key member : 멤버 추가
+
+SREM key member : 멤버 제거
+
+SMEMBERS key : 모든 멤버 조회
+
+Sorted Set (ZSet)
+
+ZADD key score member : 정렬된 집합에 저장
+
+ZREVRANGE key start stop [WITHSCORES] : score 내림차순 조회
+
+ZRANGE key start stop [WITHSCORES] : score 오름차순 조회
+
+Hash
+
+HSET key field value : 필드 저장
+
+HGET key field : 필드 조회
+
+HGETALL key : 모든 필드-값 조회
+
+SCAN (운영용 키 순회)
+
+SCAN cursor MATCH pattern COUNT n : 점진적 키 조회
+
+Pub/Sub (필요 시)
+
+PUBLISH channel message : 발행
+
+SUBSCRIBE channel : 구독
+
+Transactional & Scripting
+
+MULTI … EXEC : 트랜잭션 블록
+
+EVAL script numkeys key [key …] arg [arg …] : Lua 스크립트 실행
+
+INFO / MONITOR
+
+INFO [section] : 서버 상태 조회 (예: INFO memory, INFO keyspace)
+
+MONITOR : 실시간 요청 로그 (디버깅 전용)
+
+# 01. 2025-06-02 
+세부 설계 안되서 임의 처리
+
+
+
